@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>诺德之子·整合包|SoN.Modlist</title>
+    <!-- 字体: Cinzel 用于标题 / Inter 用于正文 (清晰现代) -->
+    <link rel="icon" type="image/png" href="assets/images/SoNLOGOPre.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入外部 CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- 固定顶部导航栏 (时刻可见) -->
+    <nav class="fixed-nav">
+        <div class="nav-brand" data-i18n="nav_brand">导航</div>
+        <div class="nav-links">
+            <a href="#chapter1" class="nav-link" id="nav-chapter1">
+                <i class="fas fa-scroll"></i> <span data-i18n="nav_chapter1">整合概念</span>
+            </a>
+            <a href="#chapter2" class="nav-link" id="nav-chapter2">
+                <i class="fas fa-crown"></i> <span data-i18n="nav_chapter2">整合特色</span>
+            </a>
+            <a href="#chapter3" class="nav-link" id="nav-chapter3">
+                <i class="fas fa-tachometer-alt"></i> <span data-i18n="nav_chapter3">性能需求</span>
+            </a>
+            <a href="#chapter4" class="nav-link" id="nav-chapter4">
+                <i class="fas fa-bullhorn"></i> <span data-i18n="nav_chapter4">更新日志</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- 浮动操作按钮 (右下) -->
+    <div class="float-actions">
+        <div class="float-btn" id="downloadBtn">
+            <i class="fas fa-download"></i>
+            <span data-i18n="float_download">下载整合</span>
+        </div>
+        <div class="float-btn" id="donateBtn">
+            <i class="fas fa-heart"></i>
+            <span data-i18n="float_donate">支持作者</span>
+        </div>
+        <div class="float-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+            <span data-i18n="float_lang">选择语言</span>
+        </div>
+    </div>
+
+    <!-- 捐款模态框 (新增PayPal/信用卡等) -->
+    <div class="modal-overlay" id="donateModal">
+        <div class="modal-card">
+            <span class="modal-close" id="closeDonateModal">&times;</span>
+            <h2 data-i18n="donate_title">感谢您的支持</h2>
+            <div class="thanks-message" data-i18n="donate_message1">每一份心意都是作者继续打磨整合包的动力</div>
+            <div class="thanks-message" data-i18n="donate_message2" style="margin-top: 0.5rem;">愿塔洛斯指引你</div>
+            <div class="qr-grid">
+                <div class="qr-item">
+                    <div class="qr-placeholder">
+                        <img src="assets/images/WeixinPaymentcode.png" alt="微信收款码">
+                    </div>
+                    <p>微信</p>
+                </div>
+                <div class="qr-item">
+                    <div class="qr-placeholder">
+                        <img src="assets/images/AlipayPaymentcode.png" alt="支付宝收款码">
+                    </div>
+                    <p>支付宝</p>
+                </div>
+                <!-- 新增 PayPal 占位 -->
+                <div class="qr-item">
+                    <div class="qr-placeholder">
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                    <p>PayPal</p>
+                </div>
+                <!-- 新增 Patreon / 信用卡占位 -->
+                <div class="qr-item">
+                    <div class="qr-placeholder">
+                        <i class="fab fa-cc-visa"></i>
+                    </div>
+                    <p>Credit Card</p>
+                </div>
+                <!-- 新增 加密货币占位 -->
+                <div class="qr-item">
+                    <div class="qr-placeholder">
+                        <i class="fab fa-bitcoin"></i>
+                    </div>
+                    <p>Bitcoin</p>
+                </div>
+            </div>
+            <div class="footnote">* 长按保存二维码/图标，使用对应APP扫码/转账</div>
+        </div>
+    </div>
+
+    <!-- 下载模态框 (不变) -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-card">
+            <span class="modal-close" id="closeDownloadModal">&times;</span>
+            <h2 data-i18n="download_title">选择下载通道</h2>
+            <div class="thanks-message" data-i18n="download_message">根据你的网络环境选择合适的网盘</div>
+            <div class="download-grid">
+                <div class="dl-item">
+                    <a href="#" class="download-btn" target="_blank"><i class="fas fa-cloud-download-alt"></i> 百度网盘</a>
+                    <p style="margin-top:0.5rem;">提取码: sodn</p>
+                </div>
+                <div class="dl-item">
+                    <a href="#" class="download-btn" target="_blank"><i class="fas fa-cloud-download-alt"></i> 天翼云盘</a>
+                    <p style="margin-top:0.5rem;">提取码: 2336</p>
+                </div>
+                <div class="dl-item">
+                    <a href="#" class="download-btn" target="_blank"><i class="fas fa-magnet"></i> 磁力链</a>
+                    <p style="margin-top:0.5rem;">BT 做种中</p>
+                </div>
+            </div>
+            <div class="footnote" data-i18n="download_notice">* 具体下载流程请参阅页面的“诺德之子|下载流程”部分或下载压缩包中的“上古卷轴5诺德之子整合安装教程”。</div>
+        </div>
+    </div>
+
+    <!-- 语言选择模态框 (不变) -->
+    <div class="modal-overlay" id="langModal">
+        <div class="modal-card" style="max-width: 500px;">
+            <span class="modal-close" id="closeLangModal">&times;</span>
+            <h2 data-i18n="lang_title">选择语言</h2>
+            <div class="lang-options">
+                <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+                <button class="lang-option" data-lang="en">🇬🇧 English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="main-wrapper">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-surtitle" data-i18n="hero_surtitle">SKYRIM · SON OF NORD</div>
+                <h1 data-i18n="hero_title">诺德之子</h1>
+                <div class="hero-divider"></div>
+                <div class="hero-subtitle" data-i18n="hero_subtitle">立志打造属于中国人自已的 Lorerim</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- 第一章：整合概念 -->
+            <section id="chapter1" class="chapter-card">
+                <h2 data-i18n="ch1_title">诺德之子 · 整合概念</h2>
+                <p data-i18n="ch1_desc1">诺德之子整合，是一个注重真实向、高沉浸式的《上古卷轴5》整合包，致力于还原泰姆瑞尔大陆的政治、文化与宗教世界观。您将体验到：</p>
+                <ul class="concept-list">
+                    <li data-i18n="ch1_item1">顶尖的城市与重要地点美化，作者从950+ N网模组中精选的高质量新任务及原版任务拓展；</li>
+                    <li data-i18n="ch1_item2">自组装的基于社区着色器的PBR全覆盖纹理，画面质感跃升；</li>
+                    <li data-i18n="ch1_item3">收录N网最优秀的9个智能随从 + 10余个原版随从拓展，陪伴更真实；</li>
+                    <li data-i18n="ch1_item4">真实欧美风人物美化（兼顾部分东方审美），NPC日程与互动更智能；</li>
+                    <li data-i18n="ch1_item5">可选实验室插件，满足多元需求；</li>
+                    <li data-i18n="ch1_item6">旨在打造一个完美的天际大陆，亦可作为您的打底包。</li>
+                </ul>
+                <p data-i18n="ch1_footer">最重要的是：安装极简，操作容易。所有输出文件（DynDoLod、TexGen、Bodyslide、xEdit、Loot 等）均已备齐，您无需再与繁琐的工具纠缠！</p>
+                <p class="placeholder-text" data-i18n="ch1_placeholder">—— 概念详情持续更新 ——</p>
+            </section>
+
+            <!-- 第二章：优势详解 (纵向排列) -->
+            <section id="chapter2" class="chapter-card">
+                <h2 data-i18n="ch2_title">诺德之子 · 整合特色</h2>
+                <div class="feature-list-vertical">
+                    <!-- 1 -->
+                    <div class="feature-item-vertical">
+                        <h3><span class="feature-num">1</span> <span data-i18n="feature1_title">最好的全城市拓展与美化</span></h3>
+                        <div class="feature-quote" data-i18n="feature1_quote">“额……这也叫城市吗？”</div>
+                        <div class="feature-description" data-i18n="feature1_desc">每一个城镇都经过了拓展与美化，大小至少拓展至原来的两倍至三倍。作者自制兼容补丁，禁用3000+对象降低性能需求。</div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="feature-item-vertical">
+                        <h3><span class="feature-num">2</span> <span data-i18n="feature2_title">PBR全覆盖</span></h3>
+                        <div class="feature-quote" data-i18n="feature2_quote">“我花了200个G对比N网所有的PBR材质”</div>
+                        <div class="feature-description" data-i18n="feature2_desc">整合社区顶尖PBR材质，实现真实光影反射，每一寸地表、建筑都质感十足。</div>
+                    </div>
+                    <!-- 3-12 此处为示例，实际可扩展 -->
+                </div>
+                <p class="placeholder-text" style="margin-top:2rem;" data-i18n="ch2_placeholder">—— 整合特色持续完善中 ——</p>
+            </section>
+
+            <!-- 第三章：性能需求 -->
+            <section id="chapter3" class="chapter-card">
+                <h2 data-i18n="ch3_title">诺德之子 · 配置建议</h2>
+                <p data-i18n="ch3_desc">为保证流畅体验，请参考以下配置。推荐配置可稳定60帧。</p>
+                <div class="specs-modern">
+                    <div class="spec-col">
+                        <h3><i class="fas fa-shield-alt"></i> <span data-i18n="min_spec">最低配置</span></h3>
+                        <div class="spec-row"><span class="spec-label" data-i18n="cpu">CPU</span><span class="spec-value">6核12线程</span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="ram">内存</span><span class="spec-value">16 GB</span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="gpu">显卡</span><span class="spec-value">GTX 1060</span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="vram">显存</span><span class="spec-value">4 GB</span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="storage">硬盘</span><span class="spec-value">SSD</span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="os">系统</span><span class="spec-value">Windows 10 64位</span></div>
+                    </div>
+                    <div class="spec-col">
+                        <h3><i class="fas fa-crown"></i> <span data-i18n="rec_spec">推荐配置 (60帧)</span></h3>
+                        <div class="spec-row"><span class="spec-label" data-i18n="cpu">CPU</span><span class="spec-value"><strong>8核16线程以上</strong></span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="ram">内存</span><span class="spec-value"><strong>32 GB</strong></span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="gpu">显卡</span><span class="spec-value"><strong>RTX 2060 / RTX 3060</strong></span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="vram">显存</span><span class="spec-value"><strong>6 GB 以上</strong></span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="storage">硬盘</span><span class="spec-value"><strong>NVMe SSD</strong></span></div>
+                        <div class="spec-row"><span class="spec-label" data-i18n="os">系统</span><span class="spec-value"><strong>Windows 11 64位</strong></span></div>
+                    </div>
+                </div>
+                <div class="spec-footnote"><i class="fas fa-info-circle"></i> <span data-i18n="spec_footnote">显存需求视材质精度而定，建议留有余量。整合包已优化，开箱即用。</span></div>
+                <p class="placeholder-text" data-i18n="ch3_placeholder">—— 性能调优指南后续更新 ——</p>
+            </section>
+            
+            <!-- 第四章: 更新日志 + 下载流程 (动态填充) -->
+            <section id="chapter4" class="chapter-card" style="margin-bottom: 2rem;">
+                <h2 data-i18n="update_title">诺德之子 · 更新日志</h2>
+                <!-- 动态更新日志容器 -->
+                <div id="changelogContainer"></div>
+                
+                <!-- 下载流程容器 (将在此处动态插入) -->
+                <div id="downloadProcessContainer"></div>
+            </section>
+
+            <!-- 鸣谢捐赠者 (加大间隔通过donor-divider的margin-top实现) -->
+            <div class="donor-divider"></div>
+            <div class="donor-title"><h2 data-i18n="donors_title">诺德之子 · 捐赠者鸣谢列表</h2></div>
+            <div class="donor-name"><p data-i18n="donors_desc">感谢以下玩家对整合包的支持，你们的每一份心意都是作者继续打磨的动力。</p></div>
+            <div class="donors-grid">
+                <!-- 左列 -->
+                <div class="donors-col">
+                    <div class="donor-item"><span class="donor-name">VMP Corporation</span> <span class="donor-amount">200.00 EUR</span></div>
+                    <div class="donor-item"><span class="donor-name">ElderScrollsFan</span> <span class="donor-amount">120.00 USD</span></div>
+                    <div class="donor-item"><span class="donor-name">SkyrimTogether</span> <span class="donor-amount">88.88 EUR</span></div>
+                    <div class="donor-item"><span class="donor-name">Nolvus Team</span> <span class="donor-amount">50.00 EUR</span></div>
+                </div>
+                <!-- 右列 -->
+                <div class="donors-col">
+                    <div class="donor-item"><span class="donor-name">Kevin K</span> <span class="donor-amount">88.00 EUR</span></div>
+                    <div class="donor-item"><span class="donor-name">Dovahkiin</span> <span class="donor-amount">66.66 USD</span></div>
+                    <div class="donor-item"><span class="donor-name">Lorerim_Fan</span> <span class="donor-amount">45.00 EUR</span></div>
+                    <div class="donor-item"><span class="donor-name">Whiterun Guard</span> <span class="donor-amount">30.00 USD</span></div>
+                </div>
+            </div>
+            <div class="donors-thanks" data-i18n="donors_thanks">愿凯娜之风吹散你们的烦恼！</div>
+                
+            <!-- 内联支持按钮 (Nolvus风格) -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="support-inline-btn" id="inlineDonateBtn">
+                    <i class="fas fa-heart"></i> <span data-i18n="support_button">成为支持者</span>
+                </button>
+            </div>
+
+            <!-- 底部版权区 -->
+            <div class="site-footer">
+                <span data-i18n="copyright">© 2026 诺德之子整合包 · 版本 1.0.0 · 开源精神</span> 
+                | <a href="#" id="footerDonateLink" style="color:#b88a3d;"><i class="fas fa-heart"></i> 支持项目</a>
+            </div>
+        </div>
+    </div>
+     <script src="assets/js/main.js"></script>
+</body>
+</html>
