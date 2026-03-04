@@ -1,5 +1,5 @@
 (function() {
-    // 语言包 (修复changelog_html使用正确的details结构)
+    // 语言包 (更新日志精简为一个版本，下载流程独立)
     const i18n = {
         zh: {
             float_download: "下载整合",
@@ -52,10 +52,11 @@
             donate_message2: "愿塔洛斯指引你",
             download_title: "选择下载通道",
             download_message: "根据你的网络环境选择合适的网盘",
-            download_notice:"* 具体下载流程请参阅页面的“诺德之子|下载流程”部分或下载压缩包中的“上古卷轴5诺德之子整合安装教程”",
+            download_notice:"* 具体下载流程请参阅下方“下载流程”卡片或压缩包中的教程。",
             lang_title: "选择语言",
             support_button: "成为支持者",
-            copyright: "© 2026 诺德之子整合包 · 版本 2.0.0 · 开源精神"
+            copyright: "© 2026 诺德之子整合包 · 版本 2.0.0 · 开源精神",
+            download_process_title: "📥 下载流程"
         },
         en: {
             float_download: "Download",
@@ -108,15 +109,17 @@
             donate_message2: "May Talos guide you",
             download_title: "Choose Download",
             download_message: "Select the appropriate mirror based on your network",
-            download_notice:"* Please refer to the download guide section for installation instructions.",
+            download_notice:"* See the 'Download Guide' card below for installation instructions.",
             lang_title: "Choose Language",
             support_button: "Become a supporter",
-            copyright: "© 2026 Son of Nord Pack · Ver 2.0.0 · Open source"
+            copyright: "© 2026 Son of Nord Pack · Ver 2.0.0 · Open source",
+            download_process_title: "📥 Download Guide"
         }
     };
-    // 语言包内嵌HTML (更新日志 和 下载流程) 使用正确的details结构
+
+    // 简体中文更新日志 (单个版本，简洁)
     i18n.zh.changelog_html = `
-        <details class="changelog-item">
+        <details>
             <summary><span>📌 版本 2.0.0 (2025-02-20)</span></summary>
             <div class="changelog-content">
                 <ul>
@@ -127,28 +130,9 @@
                 </ul>
             </div>
         </details>
-        <details class="changelog-item">
-            <summary><span>📌 版本 1.5.0 (2025-01-05)</span></summary>
-            <div class="changelog-content">
-                <ul>
-                    <li>大修独孤城，增加港口区</li>
-                    <li>整合社区着色器v1.2，光影升级</li>
-                    <li>修复部分NPC黑脸问题</li>
-                </ul>
-            </div>
-        </details>
-        <details class="changelog-item">
-            <summary><span>📌 版本 1.0.0 (2024-12-01)</span></summary>
-            <div class="changelog-content">
-                <ul>
-                    <li>首个公开版本，包含基础城市美化与核心模组</li>
-                    <li>集成DynDOLOD 3.0，远景流畅</li>
-                </ul>
-            </div>
-        </details>
     `;
+    // 简体中文下载流程
     i18n.zh.downloadprocess_html = `
-        <h3 style="font-family: 'Cinzel', serif; font-size: 1.9rem; color: #f5d999; border-left: 5px solid #b88a3d; padding-left: 1.8rem; margin: 2.5rem 0 1.8rem 0;" data-i18n="download_process_title">📥 下载流程</h3>
         <ol style="font-size: 1.35rem; color: #ddd2c0; margin-left: 2rem;">
             <li>点击右下角“下载整合”按钮，选择网盘通道（百度/天翼/磁力）。</li>
             <li>下载压缩包后，解压至非中文路径（如 D:\\Skyrim\\SoN）。</li>
@@ -157,8 +141,10 @@
         </ol>
         <p style="color: #bcae99; margin-top: 1.5rem;">⭐ 详细视频教程请访问 B站/YouTube 搜索“诺德之子安装”</p>
     `;
+
+    // 英文更新日志
     i18n.en.changelog_html = `
-        <details class="changelog-item">
+        <details>
             <summary><span>📌 Version 2.0.0 (2025-02-20)</span></summary>
             <div class="changelog-content">
                 <ul>
@@ -169,28 +155,9 @@
                 </ul>
             </div>
         </details>
-        <details class="changelog-item">
-            <summary><span>📌 Version 1.5.0 (2025-01-05)</span></summary>
-            <div class="changelog-content">
-                <ul>
-                    <li>Solitude expanded with harbor district</li>
-                    <li>Community Shaders v1.2 integrated</li>
-                    <li>Fixed black-face issues for some NPCs</li>
-                </ul>
-            </div>
-        </details>
-        <details class="changelog-item">
-            <summary><span>📌 Version 1.0.0 (2024-12-01)</span></summary>
-            <div class="changelog-content">
-                <ul>
-                    <li>First public release: core overhauls and city beautification</li>
-                    <li>DynDOLOD 3.0 pre-generated</li>
-                </ul>
-            </div>
-        </details>
     `;
+    // 英文下载流程
     i18n.en.downloadprocess_html = `
-        <h3 style="font-family: 'Cinzel', serif; font-size: 1.9rem; color: #f5d999; border-left: 5px solid #b88a3d; padding-left: 1.8rem; margin: 2.5rem 0 1.8rem 0;" data-i18n="download_process_title">📥 Download Guide</h3>
         <ol style="font-size: 1.35rem; color: #ddd2c0; margin-left: 2rem;">
             <li>Click the "Download" float button, choose a mirror (Baidu/Tianyi/Magnet).</li>
             <li>Extract the archive to a non-Chinese path (e.g. D:\\Skyrim\\SoN).</li>
@@ -199,7 +166,9 @@
         </ol>
         <p style="color: #bcae99; margin-top: 1.5rem;">⭐ Video tutorials available on YouTube.</p>
     `;
+
     let currentLang = 'zh';
+
     function setLanguage(lang) {
         if (!i18n[lang]) return;
         currentLang = lang;
@@ -225,18 +194,21 @@
         }
         localStorage.setItem('preferredLang', lang);
     }
+
     const savedLang = localStorage.getItem('preferredLang');
     if (savedLang && i18n[savedLang]) {
         setLanguage(savedLang);
     } else {
-        setLanguage('zh'); // 默认中文
+        setLanguage('zh');
     }
+
     // 模态框控制
     const donateBtn = document.getElementById('donateBtn');
     const donateModal = document.getElementById('donateModal');
     const closeDonate = document.getElementById('closeDonateModal');
     donateBtn.addEventListener('click', () => donateModal.classList.add('show'));
     closeDonate.addEventListener('click', () => donateModal.classList.remove('show'));
+
     const inlineDonateBtn = document.getElementById('inlineDonateBtn');
     if (inlineDonateBtn) {
         inlineDonateBtn.addEventListener('click', () => donateModal.classList.add('show'));
@@ -248,21 +220,25 @@
             donateModal.classList.add('show');
         });
     }
+
     const downloadBtn = document.getElementById('downloadBtn');
     const downloadModal = document.getElementById('downloadModal');
     const closeDownload = document.getElementById('closeDownloadModal');
     downloadBtn.addEventListener('click', () => downloadModal.classList.add('show'));
     closeDownload.addEventListener('click', () => downloadModal.classList.remove('show'));
+
     const langBtn = document.getElementById('langBtn');
     const langModal = document.getElementById('langModal');
     const closeLang = document.getElementById('closeLangModal');
     langBtn.addEventListener('click', () => langModal.classList.add('show'));
     closeLang.addEventListener('click', () => langModal.classList.remove('show'));
+
     window.addEventListener('click', (e) => {
         if (e.target === donateModal) donateModal.classList.remove('show');
         if (e.target === downloadModal) downloadModal.classList.remove('show');
         if (e.target === langModal) langModal.classList.remove('show');
     });
+
     document.querySelectorAll('.lang-option').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const lang = e.target.getAttribute('data-lang');
@@ -270,6 +246,7 @@
             langModal.classList.remove('show');
         });
     });
+
     // 导航高亮
     const sections = document.querySelectorAll('.chapter-card');
     const navLinks = {
@@ -278,12 +255,14 @@
         chapter3: document.getElementById('nav-chapter3'),
         chapter4: document.getElementById('nav-chapter4')
     };
+
     function setActiveLink(id) {
         Object.values(navLinks).forEach(link => {
             if (link) link.classList.remove('active');
         });
         if (navLinks[id]) navLinks[id].classList.add('active');
     }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -295,7 +274,9 @@
             }
         });
     }, { threshold: 0.2, rootMargin: '-50px 0px -50px 0px' });
+
     sections.forEach(section => observer.observe(section));
+
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();

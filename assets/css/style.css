@@ -86,6 +86,7 @@ body {
 }
 /* ----- 英雄区 (纯净史诗) ----- */
 .hero {
+    background-image: url('/OpeninginterfacePre.png');  /* 修正图片名 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -148,16 +149,6 @@ h1 {
     margin: 0.8rem 0 0;
     text-shadow: 0 2px 5px #000;
     letter-spacing: 2px;
-}
-.hero-desc-text {
-    font-size: 1.4rem;
-    color: #cfc2ae;
-    max-width: 900px;
-    margin: 2rem auto 0;
-    background: transparent;
-    border: none;
-    padding: 0;
-    font-weight: 400;
 }
 /* ----- 章节卡片 (加宽内边距&字体) ----- */
 .chapter-card {
@@ -279,54 +270,47 @@ h1 {
     color: #bcae99;
     line-height: 1.7;
 }
-/* ----- 折叠更新日志样式 (details自定义，修复) ----- */
-details.changelog-item {
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 28px;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    transition: 0.2s;
+/* ----- 简洁更新日志样式 (单个版本，无边框无背景) ----- */
+.changelog-simple details {
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    padding: 1rem 0;
 }
-details.changelog-item:hover {
-    border-color: #b88a3d;
-}
-details.changelog-item summary {
+.changelog-simple summary {
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #e6c281;
-    padding: 1.5rem 2.5rem;
     cursor: pointer;
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0.5rem 0;
 }
-details.changelog-item summary::-webkit-details-marker {
+.changelog-simple summary::-webkit-details-marker {
     display: none;
 }
-details.changelog-item summary::after {
-    content: '\f078';  /* fa-chevron-down */
+.changelog-simple summary::after {
+    content: '\f078';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #b88a3d;
     transition: transform 0.3s;
 }
-details.changelog-item[open] summary::after {
+.changelog-simple details[open] summary::after {
     transform: rotate(180deg);
 }
-.changelog-content {
-    padding: 0.5rem 2.5rem 2.5rem 2.5rem;
+.changelog-simple .changelog-content {
+    padding: 1.5rem 1rem 1rem 2rem;
     color: #ddd2c0;
     font-size: 1.3rem;
-    border-top: 1px dashed #b88a3d40;
 }
-.changelog-content ul {
+.changelog-simple .changelog-content ul {
     margin-left: 2rem;
 }
-.changelog-content li {
-    margin-bottom: 0.8rem;
+.changelog-simple .changelog-content li {
+    margin-bottom: 0.6rem;
 }
 /* ----- 配置卡片 (加宽) ----- */
 .specs-modern {
@@ -537,7 +521,7 @@ details.changelog-item[open] summary::after {
 .float-btn:hover i {
     color: #0b0805;
 }
-/* ----- 模态框 (不变, 增加二维码占位图标样式) ----- */
+/* ----- 模态框 (二维码改为4个横向) ----- */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -597,17 +581,17 @@ details.changelog-item[open] summary::after {
 .qr-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;  /* 缩小间距以适应更多项 */
+    gap: 2rem;
     justify-content: center;
     margin: 2.5rem 0;
 }
 .qr-item {
     text-align: center;
-    width: 200px;
+    width: 180px;
 }
 .qr-placeholder {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     background: #2e271e;
     border: 3px solid #b88a3d;
     border-radius: 10px;
@@ -623,13 +607,13 @@ details.changelog-item[open] summary::after {
     object-fit: cover;
 }
 .qr-placeholder i {
-    font-size: 6rem;
+    font-size: 5rem;
     color: #d4af37;
 }
 .qr-item p {
     margin-top: 0.8rem;
     font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #b88a3d;
 }
 .download-grid {
@@ -691,13 +675,16 @@ details.changelog-item[open] summary::after {
     .fixed-nav { padding: 0.8rem 1.5rem; }
     .nav-brand { font-size: 1.3rem; }
     .nav-link { font-size: 1rem; padding: 0.4rem 1rem; }
+    .qr-item { width: 140px; }
+    .qr-placeholder { width: 120px; height: 120px; }
 }
 @media (max-width: 600px) {
     .fixed-nav { flex-direction: column; gap: 0.5rem; }
     .main-wrapper { margin-top: 120px; }
     .hero-subtitle { font-size: 1.8rem; }
-    .qr-grid { gap: 2rem; }
-    .qr-placeholder { width: 140px; height: 140px; }
+    .qr-grid { gap: 1rem; }
+    .qr-item { width: 120px; }
+    .qr-placeholder { width: 100px; height: 100px; }
 }
 .placeholder-text {
     opacity: 0.5;

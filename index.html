@@ -32,6 +32,7 @@
             <a href="#chapter4" class="nav-link" id="nav-chapter4">
                 <i class="fas fa-bullhorn"></i> <span data-i18n="nav_chapter4">更新日志</span>
             </a>
+            <!-- 下载流程未加入导航，保持简洁 -->
         </div>
     </nav>
 
@@ -51,7 +52,7 @@
         </div>
     </div>
 
-    <!-- 捐款模态框 (新增PayPal/信用卡等) -->
+    <!-- 捐款模态框 (4个二维码) -->
     <div class="modal-overlay" id="donateModal">
         <div class="modal-card">
             <span class="modal-close" id="closeDonateModal">&times;</span>
@@ -71,26 +72,17 @@
                     </div>
                     <p>支付宝</p>
                 </div>
-                <!-- 新增 PayPal 占位 -->
                 <div class="qr-item">
                     <div class="qr-placeholder">
                         <i class="fab fa-paypal"></i>
                     </div>
                     <p>PayPal</p>
                 </div>
-                <!-- 新增 Patreon / 信用卡占位 -->
                 <div class="qr-item">
                     <div class="qr-placeholder">
                         <i class="fab fa-cc-visa"></i>
                     </div>
                     <p>Credit Card</p>
-                </div>
-                <!-- 新增 加密货币占位 -->
-                <div class="qr-item">
-                    <div class="qr-placeholder">
-                        <i class="fab fa-bitcoin"></i>
-                    </div>
-                    <p>Bitcoin</p>
                 </div>
             </div>
             <div class="footnote">* 长按保存二维码/图标，使用对应APP扫码/转账</div>
@@ -117,7 +109,7 @@
                     <p style="margin-top:0.5rem;">BT 做种中</p>
                 </div>
             </div>
-            <div class="footnote" data-i18n="download_notice">* 具体下载流程请参阅页面的“诺德之子|下载流程”部分或下载压缩包中的“上古卷轴5诺德之子整合安装教程”。</div>
+            <div class="footnote" data-i18n="download_notice">* 具体下载流程请参阅下方“下载流程”卡片或压缩包中的教程。</div>
         </div>
     </div>
 
@@ -210,17 +202,23 @@
                 <p class="placeholder-text" data-i18n="ch3_placeholder">—— 性能调优指南后续更新 ——</p>
             </section>
             
-            <!-- 第四章: 更新日志 + 下载流程 (动态填充) -->
+            <!-- 第四章: 更新日志 (简洁单版本折叠) -->
             <section id="chapter4" class="chapter-card" style="margin-bottom: 2rem;">
                 <h2 data-i18n="update_title">诺德之子 · 更新日志</h2>
-                <!-- 动态更新日志容器 -->
-                <div id="changelogContainer"></div>
-                
-                <!-- 下载流程容器 (将在此处动态插入) -->
-                <div id="downloadProcessContainer"></div>
+                <div class="changelog-simple" id="changelogContainer">
+                    <!-- 通过JS动态填充，保证语言切换 -->
+                </div>
             </section>
 
-            <!-- 鸣谢捐赠者 (加大间隔通过donor-divider的margin-top实现) -->
+            <!-- 第五章: 下载流程 (独立卡片) -->
+            <section id="chapter5" class="chapter-card" style="margin-top: 0;">
+                <h2 data-i18n="download_process_title">📥 下载流程</h2>
+                <div id="downloadProcessContainer">
+                    <!-- 通过JS动态填充 -->
+                </div>
+            </section>
+
+            <!-- 鸣谢捐赠者 (加大间隔) -->
             <div class="donor-divider"></div>
             <div class="donor-title"><h2 data-i18n="donors_title">诺德之子 · 捐赠者鸣谢列表</h2></div>
             <div class="donor-name"><p data-i18n="donors_desc">感谢以下玩家对整合包的支持，你们的每一份心意都是作者继续打磨的动力。</p></div>
@@ -242,7 +240,7 @@
             </div>
             <div class="donors-thanks" data-i18n="donors_thanks">愿凯娜之风吹散你们的烦恼！</div>
                 
-            <!-- 内联支持按钮 (Nolvus风格) -->
+            <!-- 内联支持按钮 -->
             <div style="text-align: center; margin-top: 2rem;">
                 <button class="support-inline-btn" id="inlineDonateBtn">
                     <i class="fas fa-heart"></i> <span data-i18n="support_button">成为支持者</span>
@@ -251,11 +249,11 @@
 
             <!-- 底部版权区 -->
             <div class="site-footer">
-                <span data-i18n="copyright">© 2026 诺德之子整合包 · 版本 1.0.0 · 开源精神</span> 
+                <span data-i18n="copyright">© 2026 诺德之子整合包 · 版本 2.0.0 · 开源精神</span> 
                 | <a href="#" id="footerDonateLink" style="color:#b88a3d;"><i class="fas fa-heart"></i> 支持项目</a>
             </div>
         </div>
     </div>
-     <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
