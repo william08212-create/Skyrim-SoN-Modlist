@@ -18,7 +18,8 @@
 <body>
     <!-- 固定顶部导航栏 (时刻可见) -->
     <nav class="fixed-nav">
-        <div class="nav-brand" data-i18n="nav_brand">导航</div>
+        <div class="nav-brand" data-i18n="nav_brand">导航|点击即可跳转
+        </div>
         <div class="nav-links">
             <a href="#chapter1" class="nav-link" id="nav-chapter1">
                 <i class="fas fa-scroll"></i> <span data-i18n="nav_chapter1">整合概念</span>
@@ -30,14 +31,26 @@
                 <i class="fas fa-tachometer-alt"></i> <span data-i18n="nav_chapter3">性能需求</span>
             </a>
             <a href="#chapter4" class="nav-link" id="nav-chapter4">
-                <i class="fas fa-bullhorn"></i> <span data-i18n="nav_chapter4">更新日志</span>
+                <i class="fas fa-history"></i> <span data-i18n="nav_chapter4">整合发售</span>
             </a>
-            <!-- 下载流程未加入导航，保持简洁 -->
+            <a href="#chapter5" class="nav-link" id="nav-chapter5">
+                <i class="fas fa-bullhorn"></i> <span data-i18n="nav_chapter5">更新日志</span>
+            </a>
+            <a href="#chapter6" class="nav-link" id="nav-chapter6">
+                <i class="fas fa-download"></i> <span data-i18n="nav_chapter6">下载流程</span>
+            </a>
+            <a href="#chapter7" class="nav-link" id="nav-chapter7">
+                <i class="fas fa-question-circle"></i> <span data-i18n="nav_chapter7">常见问题</span>
+            </a>
         </div>
     </nav>
 
     <!-- 浮动操作按钮 (右下) -->
     <div class="float-actions">
+        <div class="float-btn" id="forumBtn">
+            <i class="fas fa-users"></i>
+            <span data-i18n="float_forumload">加入社群</span>
+        </div>
         <div class="float-btn" id="downloadBtn">
             <i class="fas fa-download"></i>
             <span data-i18n="float_download">下载整合</span>
@@ -52,7 +65,35 @@
         </div>
     </div>
 
-    <!-- 捐款模态框 (4个二维码) -->
+    <!-- 社群模态框 (统一为黑金风格，支持QQ/微信群) -->
+    <div class="modal-overlay" id="communityModal">
+        <div class="modal-card" style="max-width: 800px;">
+            <span class="modal-close" id="closeCommunityModal">&times;</span>
+            <h2 data-i18n="community_title">诺德之子 · 玩家社群</h2>
+            <div class="thanks-message" data-i18n="community_message">扫码加入QQ/微信群，实时获取更新信息及社区最新模组</div>
+            <div class="qr-grid">
+                <!-- QQ 群 -->
+                <div class="qr-item">
+                    <div class="qr-forumplaceholder">
+                        <img src="assets/images/SoNQQ.jpg">
+                    </div>
+                    <p style="color:#d4af37; margin:0.5rem 0 0.2rem;">QQ群</p>
+                    <p style="font-size:1rem; color:#bcae99;">群号：1027978354</p>
+                </div>
+                <!-- 微信群 -->
+                <div class="qr-item">
+                    <div class="qr-forumplaceholder">
+                        <img src="assets/images/SoNQQ.jpg">
+                    </div>
+                    <p style="color:#d4af37; margin:0.5rem 0 0.2rem;">微信群</p>
+                    <p style="font-size:1rem; color:#bcae99;">添加管理员入群</p>
+                </div>
+            </div>
+            <div class="footnote" data-i18n="community_note">* 如果二维码失效，请联系管理员或关注更新</div>
+        </div>
+    </div>
+
+    <!-- 捐款模态框 (不变) -->
     <div class="modal-overlay" id="donateModal">
         <div class="modal-card">
             <span class="modal-close" id="closeDonateModal">&times;</span>
@@ -85,7 +126,7 @@
                     <p>Credit Card</p>
                 </div>
             </div>
-            <div class="footnote">* 长按保存二维码/图标，使用对应APP扫码/转账</div>
+            <div class="footnote">* 使用对应APP扫码/转账</div>
         </div>
     </div>
 
@@ -125,7 +166,7 @@
         </div>
     </div>
 
-    <!-- 主体内容 -->
+    <!-- 主体内容 (保持不变) -->
     <div class="main-wrapper">
         <div class="hero">
             <div class="hero-content">
@@ -150,7 +191,7 @@
                     <li data-i18n="ch1_item6">旨在打造一个完美的天际大陆，亦可作为您的打底包。</li>
                 </ul>
                 <p data-i18n="ch1_footer">最重要的是：安装极简，操作容易。所有输出文件（DynDoLod、TexGen、Bodyslide、xEdit、Loot 等）均已备齐，您无需再与繁琐的工具纠缠！</p>
-                <p class="placeholder-text" data-i18n="ch1_placeholder">—— 概念详情持续更新 ——</p>
+                <p class="placeholder-text" data-i18n="ch1_placeholder">—— 关键词：城市拓展 原版任务多分支 新任务拓展 真实向 沉浸式 智能NPCs 智能随从 实验室 欧美风 光影 高兼容性 龙战 Lorefriendly 安装容易 附加工具及输出齐全 PBR全覆盖 ——</p>
             </section>
 
             <!-- 第二章：优势详解 (纵向排列) -->
@@ -202,26 +243,82 @@
                 <p class="placeholder-text" data-i18n="ch3_placeholder">—— 性能调优指南后续更新 ——</p>
             </section>
             
-            <!-- 第四章: 更新日志 (简洁单版本折叠) -->
-            <section id="chapter4" class="chapter-card" style="margin-bottom: 2rem;">
+            <!-- 第四章 整合发售 -->
+            <section id="chapter4" class="chapter-card">
+            <h2 data-i18n="versions_title">整合发售版本</h2>
+            <div class="version-grid">
+                <div class="version-item">
+                    <h3 data-i18n="version_free_title">免费版</h3>
+                    <p data-i18n="version_free_desc">包含核心整合内容，适合普通玩家体验。</p>
+                    <div class="version-price"><span data-i18n="version_free_price">免费</span></div>
+                    <div class="version-offer" data-i18n="version_free_offer">长期免费</div>
+                </div>
+                <div class="version-item">
+                    <h3 data-i18n="version_paid_title">付费版</h3>
+                    <p data-i18n="version_paid_desc">包含更多优质模组和独家优化，享受更佳体验。</p>
+                    <div class="version-price"><span data-i18n="version_paid_price">¥69</span></div>
+                    <div class="version-offer" data-i18n="version_paid_offer">首发8折优惠</div>
+                </div>
+                <div class="version-item">
+                    <h3 data-i18n="version_family_title">全家桶版</h3>
+                    <p data-i18n="version_family_desc">包含付费版全部内容，额外赠送未来一年更新和专属支持。</p>
+                    <div class="version-price"><span data-i18n="version_family_price">¥199</span></div>
+                    <div class="version-offer" data-i18n="version_family_offer">限时立减30</div>
+                </div>
+            </div>
+            </section>
+
+            <!-- 第五章: 更新日志 (简洁单版本折叠) -->
+            <section id="chapter5" class="chapter-card" style="margin-bottom: 2rem;">
                 <h2 data-i18n="update_title">诺德之子 · 更新日志</h2>
                 <div class="changelog-simple" id="changelogContainer">
                     <!-- 通过JS动态填充，保证语言切换 -->
                 </div>
             </section>
 
-            <!-- 第五章: 下载流程 (独立卡片) -->
-            <section id="chapter5" class="chapter-card" style="margin-top: 0;">
-                <h2 data-i18n="download_process_title">📥 下载流程</h2>
+            <!-- 第六章: 下载流程 (独立卡片) -->
+            <section id="chapter6" class="chapter-card" style="margin-top: 0;">
+                <h2 data-i18n="download_process_title">下载流程</h2>
                 <div id="downloadProcessContainer">
                     <!-- 通过JS动态填充 -->
+                </div>
+            </section>
+
+            <!-- 第七章: 常见问题 (可折叠) -->
+            <section id="chapter7" class="chapter-card">
+                <h2 data-i18n="faq_title">常见问题</h2>
+                <div class="faq-list">
+                    <details>
+                        <summary><span data-i18n="faq_q1">整合包需要什么配置？</span></summary>
+                        <div class="faq-content">
+                            <p data-i18n="faq_a1">最低配置需GTX 1060 4G显存，推荐RTX 2060 6G以上。详细请参考“性能需求”章节。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary><span data-i18n="faq_q2">安装后打不开/闪退怎么办？</span></summary>
+                        <div class="faq-content">
+                            <p data-i18n="faq_a2">请确保：1. 游戏路径无中文；2. 已安装VC++运行库和.NET Framework；3. 关闭杀毒软件；4. 验证游戏文件完整性。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary><span data-i18n="faq_q3">实验室（NSFW）内容如何启用？</span></summary>
+                        <div class="faq-content">
+                            <p data-i18n="faq_a3">实验室内容为可选插件，需在Mod Organizer中勾选对应的“Lab”组。具体请查看压缩包内的教程文档。</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary><span data-i18n="faq_q4">免费版和付费版有什么区别？</span></summary>
+                        <div class="faq-content">
+                            <p data-i18n="faq_a4">免费版包含核心整合，付费版增加更多模组、独家优化和优先支持。详见“整合发售”卡片。</p>
+                        </div>
+                    </details>
                 </div>
             </section>
 
             <!-- 鸣谢捐赠者 (加大间隔) -->
             <div class="donor-divider"></div>
             <div class="donor-title"><h2 data-i18n="donors_title">诺德之子 · 捐赠者鸣谢列表</h2></div>
-            <div class="donor-name"><p data-i18n="donors_desc">感谢以下玩家对整合包的支持，你们的每一份心意都是作者继续打磨的动力。</p></div>
+            <div class="donor-name"><p data-i18n="donors_desc">感谢以下玩家对整合包的支持，你们的每一份心意都是作者继续打磨的动力。（如果不想昵称在列表中显示请在捐献记录中备注）</p></div>
             <div class="donors-grid">
                 <!-- 左列 -->
                 <div class="donors-col">
@@ -249,7 +346,7 @@
 
             <!-- 底部版权区 -->
             <div class="site-footer">
-                <span data-i18n="copyright">© 2026 诺德之子整合包 · 版本 2.0.0 · 开源精神</span> 
+                <span data-i18n="copyright">© 2026 诺德之子|SoN整合包 · 版本 1.0.1 · 开源精神</span> 
                 | <a href="#" id="footerDonateLink" style="color:#b88a3d;"><i class="fas fa-heart"></i> 支持项目</a>
             </div>
         </div>
@@ -257,3 +354,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
