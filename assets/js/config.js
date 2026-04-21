@@ -19,12 +19,12 @@ export const images = [
     { src: "assets/images/SoN-Concept/SoN-Concept-BluePalace.png", title: "女王寝" },
     { src: "assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
     { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
-    { src: "assets/images/SoN-PretoFill.png", title: "" },
-    { src: "../assets/images/SoN-PretoFill.png", title: "" },
-    { src: "/assets/images/SoN-PretoFill.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-SolitudeBryling.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-Falkreath.png", title: "" },
     { src: "assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
-    { src: "../assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" } 
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" } 
 ];
 
 // ==================== 轮播配置 ====================
