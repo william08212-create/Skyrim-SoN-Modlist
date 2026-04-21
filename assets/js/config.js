@@ -5,26 +5,26 @@
 
 // ==================== 3D轮播屏图片数据 ====================
 export const images = [
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathFort.png", title: "湿" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-MorthalMarsh.png", title: "沼泽迷雾" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-BeeandBarb.png", title: "蜂与钩" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-ThievesGuild.png", title: "盗贼公会" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-Oakwood.png", title: "橡木镇" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-SolitudeRadiant.png", title: "窗影" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-SolitudeBryling.png", title: "宅邸一隅" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-Falkreath.png", title: "乡间小路" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "高霍斯加修道院" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "佛克瑞斯森林" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-WindhelmGreyQuater.png", title: "风盔城灰民区" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-BluePalace.png", title: "女王寝" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-SolitudeBryling.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-Falkreath.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
-    { src: "/assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" } 
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathFort.png", title: "湿" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-MorthalMarsh.png", title: "沼泽迷雾" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-BeeandBarb.png", title: "蜂与钩" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-ThievesGuild.png", title: "盗贼公会" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-Oakwood.png", title: "橡木镇" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-SolitudeRadiant.png", title: "窗影" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-SolitudeBryling.png", title: "宅邸一隅" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-Falkreath.png", title: "乡间小路" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "高霍斯加修道院" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "佛克瑞斯森林" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-WindhelmGreyQuater.png", title: "风盔城灰民区" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-BluePalace.png", title: "女王寝" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-SolitudeBryling.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-Falkreath.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-HighHrothgar.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" },
+    { src: "assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png", title: "" } 
 ];
 
 // ==================== 轮播配置 ====================
