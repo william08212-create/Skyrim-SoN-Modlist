@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=5.0">
+    <title>诺德之子·整合包|SoN.Modlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/images/SoN-LOGO/SoN-LOGO.png" />
+    <link rel="stylesheet" href="assets/css/style.css"> <!--外部CSS-->    
+</head>
+<body>
+  
+    <!-- ================================================================= 导航栏 ===============================================================-->
+
+
+<!-- 顶部固定导航栏 -->
+<nav class="navbar">
+    <div class="nav-brand">诺德之子.导航|<span style="font-size: 1rem;">点击跳转</span></div>
+    <div class="nav-links">
+        <a href="#concept" class="nav-link"><i class="fas fa-scroll"></i> 整合概念</a>
+        <a href="#features" class="nav-link"><i class="fas fa-crown"></i> 整合特色</a>
+        <a href="#specs" class="nav-link"><i class="fas fa-tachometer-alt"></i> 推荐配置</a>
+        <a href="#versions" class="nav-link"><i class="fas fa-bullhorn"></i> 发售版本</a>
+        <a href="#download" class="nav-link"><i class="fas fa-download"></i> 下载流程</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> 常见问题</a>
+    </div>
+</nav>
+
+<!-- 右下浮动按钮组 -->
+<div class="float-actions">
+    <div class="float-btn" id="forumBtn"><i class="fas fa-users"></i><span>加入社群</span></div>
+    <div class="float-btn" id="downloadFloatBtn"><i class="fas fa-download"></i><span>下载整合</span></div>
+    <div class="float-btn" id="donateBtn"><i class="fas fa-heart"></i><span>支持作者</span></div>
+    <div class="float-btn" id="langBtn"><i class="fas fa-globe"></i><span>选择语言</span></div>
+</div>
+
+
+    <!-- ================================================================= 模态框 ===============================================================-->
+
+
+<!--社群模态框-->
+<div class="modal-overlay" id="communityModal">
+    <div class="modal-card">
+        <span class="modal-close" id="closeCommunity">&times;</span>
+        <h2>诺德之子 · 玩家社群</h2>
+        <span style="font-family: 'Cinzel', serif; font-size: 1.35rem;color: #e0c8a0;">扫码加入QQ/微信群，这是下载必需流程，同时可以实时获得更新信息及社区最新模组</span>
+        <div class="qr-grid">
+            <div class="qr-item">
+                <div class="qr-forumplaceholder">
+                    <img src="assets/images/SoN-Notice/SoN-QQ.jpg" alt="QQ群">
+                </div>
+                    <p>QQ群 1027978354</p>
+            </div>
+        </div>
+        <p class="footnote" style="text-align: center;">* 如果二维码失效，请参阅“常见问题”部分</p>
+    </div>
+</div>
+
+<!--支持模态框-->
+<div class="modal-overlay" id="donateModal">
+    <div class="modal-card">
+        <span class="modal-close" id="closeDonate">&times;</span>
+        <h2>感谢您的支持</h2>
+        <p style="font-family: 'Cinzel', serif; font-size: 1.5rem;color: #e0c8a0; text-align: center;"><strong>每一份心意都是作者继续打磨整合包的动力</strong></p>
+        <p style="font-family: 'Cinzel', serif; font-size: 1.5rem;color: #e0c8a0; text-align: center;"><strong>愿塔洛斯指引你</strong></p>       
+        <div class="qr-grid">
+            <div class="qr-item">
+                <div class="qr-placeholder">
+                    <img src="assets/images/SoN-PaymentCode/SoN-WeixinPaymentcode.jpg" alt="微信">
+                </div>
+                <p style="font-family: 'Cinzel', serif;"><strong>微信</strong></p>
+            </div>
+            <div class="qr-item">
+                <div class="qr-placeholder">
+                    <img src="assets/images/SoN-PaymentCode/SoN-AlipayPaymentcode.jpg" alt="支付宝">
+                </div>
+                <p style="font-family: 'Cinzel', serif;"><strong>支付宝</strong></p>
+            </div>
+        </div>
+        <p style="font-size:1.2rem; font-family:'Cinzel', serif ; text-align: center;">* 每一个捐赠者都可以写入鸣谢列表哦</p>
+    </div>
+</div>
+
+<!--语言模态框-->
+<div class="modal-overlay" id="langModal">
+    <div class="modal-card" style="max-width:400px;">
+        <span class="modal-close" id="closeLang">&times;</span>
+        <h2>选择语言</h2>
+        <div style="display:flex; gap:1rem; justify-content:center;">
+            <button class="lang-option" style="background:rgba(200,160,100,0.2); border:2px solid #b88a3d; border-radius:60px; padding:1rem 2rem; color:#fff; font-size:1.2rem; cursor:pointer;">🇨🇳 中文</button>
+            <button class="lang-option" style="background:rgba(200,160,100,0.2); border:2px solid #b88a3d; border-radius:60px; padding:1rem 2rem; color:#fff; font-size:1.2rem; cursor:pointer;">🇬🇧 English</button>
+        </div>
+    </div>
+</div>
+
+<!--下载门模态框-->
+<div class="modal-overlay" id="passwordModal">
+    <div class="modal-card">
+        <span class="modal-close" id="closePassword">&times;</span>
+        <h2>输入下载密钥</h2>
+        <p style="font-size:1.3rem; margin-bottom:1.5rem;">密钥获取方式参照“诺德之子 · 下载流程”部分</p>
+        <div style="margin:2rem 0;">
+            <input type="password" id="passwordInput" placeholder="请输入动态密钥" style="width:100%; padding:1rem; background:#1f1a12; border:2px solid #b88a3d; border-radius:40px; color:#fff; font-size:1.3rem;">
+        </div>
+        <button id="submitPassword" style="background:#b88a3d; border:none; border-radius:60px; padding:1rem 2.5rem; font-size:1.2rem; font-weight:bold; cursor:pointer; display:block; margin:0 auto;">验证</button>
+    </div>
+</div>
+
+<!--下载通路模态框-->
+<div class="modal-overlay" id="downloadModal">
+    <div class="modal-card">
+        <span class="modal-close" id="closeDownloadModal">&times;</span>
+        <h2>进入下载通道</h2>
+        <p style="font-family: 'Cinzel', serif; font-size: 1.35rem;color: #e0c8a0; text-align:center;">点击下方链接，即可进入网盘，登录/注册操作简单免费</p>
+        <div style="text-align:center; margin:2rem 0;">
+            <a href="https://yun.139.com/shareweb/#/w/i/2tQE9CuR0K8y9" target="_blank" style="background:#b88a3d; border:none; border-radius:60px; padding:1rem 3rem; color:#050302; font-size:1.5rem; text-decoration:none; display:inline-block;">天翼云盘</a>
+            <p style="font-size: 1.35rem; font-family: 'LXGW WenKai GB'; margin-top:1.5rem;">*如果您的密钥获取流程正规，您现在应该已经知道提取码了*</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- ================================================================= 整合页面背景 ===============================================================-->
+
+
+<canvas class="background" id="background"></canvas>
+
+
+    <!-- ================================================================= 整合概念展示 ===============================================================-->
+
+
+<div class="container">
+    <!-- 英雄区 (无小卡片) -->
+    <section class="main-header" style="min-height: 80vh;">
+        <img src="assets/images/SoN-Concept/SoN-Concept-BluePalace.png" alt="主页面顶部">        
+        <div class="main-header-content">
+            <div class="main-header-surtitle">SKYRIM · SON OF NORD</div>
+            <h1>诺德之子</h1>
+            <div class="main-header-divider"></div>
+            <div class="main-header-subtitle">立志打造中国人的上古卷轴5次世代整合</div>
+        </div>
+    </section>
+
+    <!-- 介绍整合的3D轮播屏 -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel"></div>
+    </div>
+
+    <!-- 整合概念 -->
+    <section class="chapter-card" id="concept">
+        <h2>诺德之子整合是什么？</h2>
+        <p style="font-family: 'LXGW WenKai GB', serif; font-size: 1.6rem; color: #ddd2c0;">***待填内容***</p>
+        
+    </section>
+    
+    <!-- 整合展示图片 -->
+    <div class="image-wrapper">
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png" alt="裂谷浮叶">
+            <div class="image-caption">待填</div>
+        </div>
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-MorthalMarsh.png" alt="灯边飞蛾">
+            <div class="image-caption">待填</div>
+        </div>                                       
+    </div>
+    <div class="image-wrapper">
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png" alt="裂谷浮叶">
+            <div class="image-caption">待填</div>
+        </div>
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-MorthalMarsh.png" alt="灯边飞蛾">
+            <div class="image-caption">待填</div>
+        </div>                                       
+    </div>
+    <div class="image-wrapper">
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-FalkreathForest.png" alt="裂谷浮叶">
+            <div class="image-caption">待填</div>
+        </div>
+        <div class="image-card">
+            <img src="../assets/images/SoN-Concept/SoN-Concept-MorthalMarsh.png" alt="灯边飞蛾">
+            <div class="image-caption">待填</div>
+        </div>                                       
+    </div>
+
+    <!-- 整合展示视频 -->
+    <div class="video-wrapper" style="margin: 200px auto">
+        <video class="video-card" src="assets/videos/SoNTestVedio.mp4" poster="assets/images/SoN-Concept/SoN-Concept-Oakwood.png" controls></video>
+        <div class="video-caption">诺德之子V2.震撼首发</div>
+    </div>
+  
+
+    <!-- 数量展示栏 -->    
+    <div class="showcase-wrapper">
+        <div class="showcase-card">
+            <div>最新版本</div>
+            <div class="count-number">V2</div>
+        </div>
+        <div class="showcase-card">
+            <div>模组数量</div>
+            <div class="count-number" data-target="1389">0</div>
+        </div>
+        <div class="showcase-card">
+            <div>插件数量</div>
+            <div class="count-number" data-target="1665">0</div>
+        </div>
+    </div>
+
+
+    <!-- ================================================================= 主内容 ===============================================================-->
+
+
+    <div class="container">      
+        <!-- 特色区域 -->
+        <section class="chapter-card" id="features">
+            <h2>为什么要选择诺德之子？</h2>
+            <!-- 文字区 -->
+            <p style="font-family: 'LXGW WenKai GB', serif; font-size: 1.4rem; color: #ddd2c0;">诺德之子整合，是一个注重真实向、高沉浸式的《上古卷轴5》整合包，致力于还原泰姆瑞尔大陆的政治、文化与宗教世界观。您将体验到：</p>            
+            <ul class="concept-list" style="margin-top:1.5rem;" >
+                <li>顶尖的城市与重要地点美化，作者从950+ N网模组中精选的高质量新任务及原版任务拓展；</li>
+                <li>自组装的基于社区着色器的PBR全覆盖纹理，画面质感跃升；</li>
+                <li>收录N网最优秀的9个智能随从 + 10余个原版随从拓展，陪伴更真实；</li>
+                <li>真实欧美风人物美化（兼顾部分东方审美），NPC日程与互动更智能；</li>
+                <li>可选实验室插件，满足多元需求；</li>
+                <li>旨在打造一个完美的天际大陆，亦可作为您的打底包。</li>
+            </ul>
+            <p style="font-family: 'LXGW WenKai GB', serif; font-size: 1.4rem; color: #ddd2c0; margin-top:1.5rem;">最重要的是：安装极简，操作容易。所有输出文件（DynDoLod、TexGen、Bodyslide、xEdit、Loot 等）均已备齐，您无需再与繁琐的工具纠缠！</p>
+            <p class="placeholder-text" style="margin-top:2.5rem;">—— 关键词：社区着色器 LUX × CS 城市拓展 原版任务多分支 新任务拓展 真实向 沉浸式 智能NPCs 智能随从 实验室 欧美风 高兼容性 龙战 Lorefriendly 安装容易 附加工具及输出齐全 PBR全覆盖 ——</p>                 
+            <div class="feature-wrapper">
+                <a href="pages/Feature-Lighting.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚠ</div>
+                    <div class="feature-card-name">画面革新</div>
+                </a>
+                <a href="pages/Feature-Enviroment.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚢ</div>
+                    <div class="feature-card-name">环境美化</div>
+                </a>
+                <a href="pages/Feature-Apperance.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚦ</div>
+                    <div class="feature-card-name">人物美化</div>
+                </a>
+                <a href="pages/Feature-VanillaLocation.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚨ</div>
+                    <div class="feature-card-name">地点美化</div>
+                </a>
+                <a href="pages/Feature-NewLocation.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚱ</div>
+                    <div class="feature-card-name">地域拓展</div>
+                </a>
+                <a href="pages/Feature-VanillaQuest.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᛝ</div>
+                    <div class="feature-card-name">任务大修</div>
+                </a>
+                <a href="pages/Feature-NewQuest.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᛗ</div>
+                    <div class="feature-card-name">新任务拓展</div>
+                </a>
+                <a href="pages/Feature-NPC.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᛞ</div>
+                    <div class="feature-card-name">沉浸式NPCs</div>
+                </a>
+                <a href="pages/Feature-Combat.html" class="feature-card" target="_blank" rel="noopener noreferrer">
+                    <div class="feature-card-rune">ᚺ</div>
+                    <div class="feature-card-name">战斗系统</div>            
+                </a>    
+            </div>
+        </section>
+
+        <!-- 配置建议 -->
+        <section class="chapter-card" id="specs">
+            <h2>我需要一台什么配置的电脑？</h2>
+            <div class="specs-grid">
+                <div class="spec-col">
+                    <h3><i class="fas fa-shield-alt"></i> 入门配置</h3>
+                    <div class="spec-row">
+                        <span class="spec-label">CPU</span>
+                        <span class="spec-value">6核12线程</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">内存</span>
+                        <span class="spec-value">16 GB</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显卡</span>
+                        <span class="spec-value">NVIDIA GTX 1660 Ti / 1660 SUPER<br>NVIDIA RTX 3050<br>AMD RX 6600 / 6600 XT<br>NVIDIA GTX 1070 / 1070 Ti</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显存</span>
+                        <span class="spec-value">6 GB</span>
+                    </div>
+                </div>
+                <div class="spec-col">
+                    <h3><i class="fas fa-heart"></i> 推荐配置</h3>
+                    <div class="spec-row">
+                        <span class="spec-label">CPU</span>
+                        <span class="spec-value">6核12线程 ~ 8核16线程</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">内存</span>
+                        <span class="spec-value">16 ~ 32 GB</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显卡</span>
+                        <span class="spec-value">NVIDIA RTX 3060 / 3060 Ti<br>NVIDIA RTX 4060<br>AMD RX 6650 XT / 7600 XT<br>NVIDIA RTX 2070 / 2070 SUPER</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显存</span>
+                        <span class="spec-value">6 ~ 12 GB</span>
+                    </div>
+                </div>
+                <div class="spec-col">
+                    <h3><i class="fas fa-crown"></i> 畅玩配置</h3>
+                    <div class="spec-row">
+                        <span class="spec-label">CPU</span>
+                        <span class="spec-value">8核16线程+</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">内存</span>
+                        <span class="spec-value">32 GB+</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显卡</span>
+                        <span class="spec-value">NVIDIA RTX 4070 / 4060 Ti+<br>AMD RX 7700 XT / 7800 XT+<br>NVIDIA RTX 3070 / 3070 Ti+<br>NVIDIA RTX 3080+</span>
+                    </div>
+                    <div class="spec-row">
+                        <span class="spec-label">显存</span>
+                        <span class="spec-value">12 GB+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spec-footnote" style="margin-top:1rem; font-size: 1.4rem;"><i class="fas fa-info-circle"></i> 整合包大小约200G，请您预留足够空间。</div>
+        </section>
+
+        <!-- 版本发售 -->
+        <section class="chapter-card" id="versions">
+            <h2>整合发售</h2>
+            <div class="version-grid">
+                <!-- 免费版 -->
+                <div class="version-item">
+                    <h3>免费版</h3>
+                    <div class="version-price">免费</div>
+                    <ul class="version-features">
+                        <li><i class="fas fa-check-circle"></i> 诺德之子整合核心</li>
+                        <li><i class="fas fa-check-circle"></i> Bug反馈渠道</li>
+                        <li><i class="fas fa-check-circle"></i> 可选远程安装服务（另加50元）</li>                                                                       
+                        <li><i class="fas fa-times-circle"></i> “天际之美”附加包</li>                                              
+                        <li><i class="fas fa-times-circle"></i> 独家城镇大修</li>
+                        <li><i class="fas fa-times-circle"></i> 独家Reshade预设</li>    
+                        <li><i class="fas fa-times-circle"></i> 整合自用补丁集</li>                                              
+                        <li><i class="fas fa-times-circle"></i> 未来版本均免费</li> 
+                    </ul>
+                    <div class="version-tag">开源精神.零门槛体验</div>
+                </div>
+
+                <!-- 标准付费版 -->
+                <div class="version-item recommended">
+                    <div class="rec-badge">🔥 强烈推荐</div>
+                    <h3>标准版</h3>
+                    <div class="version-price">¥37</div>
+                    <ul class="version-features">
+                        <li><i class="fas fa-check-circle"></i> 诺德之子整合核心</li>
+                        <li><i class="fas fa-check-circle"></i> Bug反馈渠道</li>   
+                        <li><i class="fas fa-check-circle"></i> 可选远程安装服务（另加5元）</li>                                                                    
+                        <li><i class="fas fa-check-circle"></i> “天际之美”附加包</li>                                              
+                        <li><i class="fas fa-check-circle"></i> 独家城镇大修</li>
+                        <li><i class="fas fa-check-circle"></i> 独家Reshade预设</li>    
+                        <li><i class="fas fa-check-circle"></i> 整合自用补丁集</li>                                              
+                        <li><i class="fas fa-times-circle"></i> 未来版本均免费</li> 
+                    </ul>
+                    <div class="version-tag">高性价比 · 一杯奶茶换沉浸天际</div>
+                </div>
+
+                <!-- 全家桶版 -->
+                <div class="version-item">
+                    <h3>全家桶版</h3>
+                    <div class="version-price">¥47</div>
+                    <ul class="version-features">
+                        <li><i class="fas fa-check-circle"></i> 诺德之子整合核心</li>
+                        <li><i class="fas fa-check-circle"></i> Bug反馈渠道</li>      
+                        <li><i class="fas fa-check-circle"></i> 可选远程安装服务（免费）</li>                                                                 
+                        <li><i class="fas fa-check-circle"></i> “天际之美”附加包</li>                                              
+                        <li><i class="fas fa-check-circle"></i> 独家城镇大修</li>
+                        <li><i class="fas fa-check-circle"></i> 独家Reshade预设</li>    
+                        <li><i class="fas fa-check-circle"></i> 整合自用补丁集</li>                                              
+                        <li><i class="fas fa-check-circle"></i> 未来版本均免费</li> 
+                    </ul>
+                    <div class="version-tag">长期陪伴 · 最完整的体验</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载流程 (含密钥) -->
+        <section class="chapter-card" id="download">
+            <h2>下载流程</h2>
+            <div class="process-steps">
+                <div class="step"><div class="step-icon"><i class="fab fa-qq"></i></div><p>1. 加入社群(右下按钮)</p></div>
+                <div class="step"><div class="step-icon"><i class="fas fa-key"></i></div><p>2. 私信群主获取密钥①</p></div>
+                <div class="step"><div class="step-icon"><i class="fas fa-lock-open"></i></div><p>3. 输入密钥验证</p></div>
+                <div class="step"><div class="step-icon"><i class="fas fa-download"></i></div><p>4. 选择通道下载</p></div>
+            </div>
+            <p style="color:#bcae99; text-align:center; font-size:1.2rem;">①免费版发送 <strong>SoNS Pay 2026</strong>；付费版发送 <strong>SoNM Pay 2026+付款截图</strong>；全家桶发送 <strong>SoNL Pay 2026+付款截图</strong></p>
+            <div class="key-input-area">
+                <input type="password" id="downloadKeyInput" placeholder="在此输入动态密钥">
+                <button id="validateKeyBtn">验证密钥</button>
+            </div>
+            <div style="text-align:center; margin:2rem 0;">
+                <img src="assets/images/SoN-Notice/SoN-DownloadExample.png" alt="示例图" style="position: relative; max-width:100%; width:500px; border-radius:12px; border:2px solid #b88a3d;">
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="chapter-card" id="faq">
+            <h2>常见问题</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>
+                        <span>社群二维码失效/社群已满导致无法加入，怎么办？</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>发生此类情况时，你可以跳过“加入社群”步骤，直接加群主QQ（群主QQ号：3614162637，备注：SoND），然后可按后续流程继续下载。</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>
+                        <span>配置需求我看不懂啊,我该怎么确定我的配置合不合适呢？</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p></p>
+                    </div>
+                </details>                
+            </div>
+        </section>
+
+        <!-- 更新日志 -->
+        <section class="chapter-card" id="changelog">
+            <h2>更新日志</h2>
+            <div class="changelog">
+                <details>
+                    <summary>版本 1.0.1</summary>
+                    <div class="changelog-content">
+                    </div>
+                </details>                
+                <details>
+                    <summary>版本 1.0.2</summary>
+                    <div class="changelog-content">
+                    </div>
+                </details>
+                <details>
+                    <summary>版本 1.0.3</summary>
+                    <div class="changelog-content">
+                    </div>
+                </details>                
+                <details>
+                    <summary>版本 2.0.1</summary>
+                    <div class="changelog-content">
+                        <ul>
+                            <li><strong>2.0新版本已推出！！！</strong></li>
+                            <li><strong>停用模组列表：<br>SDA-瑟拉娜(Serana-Dialogue-addon) </strong><br>理由：SDA改变了原版瑟拉娜人设，把原版的抑郁公主改成了火辣大小姐，作者对该设定无异议，但大量用户向作者反应不喜欢。作者出于中立考虑，改用忠于原版塑造的SDE-瑟拉娜对话拓展。<br><strong>血与火-龙战大修(Fire and blood - a dragon combat overhaul) </strong><br>理由：该模组龙族过于强悍，对手残党极不友好；会修改主线任务龙魂撕裂龙吼获得方式，与部分随从模组不兼容；龙族战斗使用大量粒子光效，偶尔造成崩溃。<br>随从米莉茜(M'rissi tails of trouble) <br>理由：经作者亲自测试，任务剧情与角色设定不Lore，且存在随从敌对与随机崩溃等恶性Bug。<br>随从密拉(Mirai) <br>理由：经作者亲自测试，任务剧情不Lore（密拉设定为初代龙裔米拉克的女儿），现行版本存在恶性Bug。
+                            <li>改用模组列表：<br>停用旧版足迹模组，改用N网最新的动态足迹(Dynamic Footprint) <br>理由：新版本足迹基于SKSE构建，不会造成存档膨胀问题，且与所有地形纹理兼容。
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary style="color: #b88a3d;"><strong>版本 2.0.2</strong></summary>
+                    <div class="changelog-content">
+                        <ul>
+                            <li>更新模组列表：<br>禁用引用完整性修复Disabled Reference Integrity Fix (SKSE)<br>动态足迹Dynamic Footprints<br>随从及重要NPCs濒死状态重制Andrealletius' Bleedout Revamp (ABR)<br>模组城市遮挡增强合集H.O.A. - Hyperspecific Occlusion Addon<br>先民渊Laintar Dale<br>XEMI实用程序XEMI Utility<br>基于社区着色器的Lux 光影Lux CS Patch<br>社区着色器CommunityShaders_AIO</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            <div class="spec-footnote" style="margin:2rem 0 0 0; font-size: 1.4rem;"><i class="fas fa-info-circle"></i> “更新日志”模块用于给SoN整合老用户了解新版本的变化，决定是否更新整合。</div>
+        </section>
+
+        <!-- 捐赠者鸣谢 -->
+        <div class="chapter-card" style="margin-bottom:2rem;">
+            <h2>捐赠者鸣谢</h2>
+            <p style="font-size: 1.4rem;">感谢以下玩家支持（做好事不想留名请备注哦）</p>
+            <div class="donors-grid">
+                <div class="donor-item"><span class="donor-name">捐献者1</span> <span class="donor-amount">捐款数目1</span></div>
+                <div class="donor-item"><span class="donor-name">捐献者2</span> <span class="donor-amount">捐款数目2</span></div>
+            </div>
+            <div style="text-align:center; margin-top:2rem;">
+                <button class="support-inline-btn" id="inlineDonate"><i class="fas fa-heart"></i>成为支持者</button>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">© 2026 诺德之子整合包 · 版本 2.0.2 · 开源精神</div>
+    </div>
+</div>
+
+<script type="module" src="assets/js/main.js"></script> <!-- 引用外部的JS -->
+
+</body>
+</html>
