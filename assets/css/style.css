@@ -1,0 +1,21 @@
+/* ========== 诺德之子整合包 - 主样式表 ========== */
+/* 使用 @import 按顺序引入所有模块 */
+
+/* 1. 基础层 - 重置、变量、全局 */
+@import url('base.css');
+
+/* 2. 布局层 - 导航、页脚、容器 */
+@import url('layout.css');
+
+/* 3. 组件层 - 卡片、标签页、按钮等 */
+@import url('components.css');
+
+/* 4. 功能模块 - 轮播、视频等 */
+@import url('carousel.css');
+@import url('scroller.css');
+
+/* 5. 页面模块 - 地域卡片、随从卡片等 */
+@import url('modules.css');
+
+/* 6. 响应式 - 必须放在最后 */
+@import url('responsive.css');
